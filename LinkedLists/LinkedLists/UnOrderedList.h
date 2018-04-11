@@ -10,10 +10,11 @@ Node struct.
 
 using namespace std;
 
+template <typename T>
 struct Node
 {
-	int data;
-	Node* nextNode;
+	T data;
+	Node<T>* nextNode;
 };
 
 template <typename T>
@@ -47,8 +48,8 @@ public:
 	================================================================*/
 	bool prepend(T userData)
 	{
-		Node* newNode = new Node;
-		Node* currentNode = NULL;
+		Node<T>* newNode = new Node;
+		Node<T>* currentNode = NULL;
 
 		newNode = new Node; // create a new node for this value
 		newNode->data = userData; // store user's value in new node
@@ -77,10 +78,10 @@ public:
 	================================================================*/
 	bool append(T userData)
 	{
-		Node* currentNode = NULL;
+		Node<T>* currentNode = NULL;
 
 		// create new node and store user's data in node
-		Node* newNode = new Node;
+		Node<T>* newNode = new Node;
 		newNode->data = userData;
 		newNode->nextNode = NULL;
 
@@ -124,7 +125,7 @@ public:
 		if (head->data == userData)
 		{
 			//create a temporary pointer for head (prevent memory leaks)
-			Node* temp = head;
+			Node<T>* temp = head;
 			head = head->nextNode;
 
 			//delete temporary pointer
@@ -133,8 +134,8 @@ public:
 		}
 
 		// create previous node
-		Node* trail = head;
-		Node* nodeToDelete = head->nextNode;
+		Node<T>* trail = head;
+		Node<T>* nodeToDelete = head->nextNode;
 
 		// compare current data with previous data
 		while (nodeToDelete != NULL && nodeToDelete->data < userData)
@@ -162,7 +163,7 @@ public:
 	================================================================*/
 	void print() const
 	{
-		Node* currentNode = NULL;
+		Node<T>* currentNode = NULL;
 
 		if (head == NULL)
 		{
@@ -190,7 +191,7 @@ public:
 	================================================================*/
 	int count() const
 	{
-		Node* current = head;
+		Node<T>* current = head;
 		int count = 0;
 
 		while (current != NULL)
@@ -212,7 +213,7 @@ public:
 	================================================================*/
 	int find(T data) const
 	{
-		Node* current = head;
+		Node<T>* current = head;
 		int intPosition = 1;
 
 		// empty list (return 0)
@@ -244,8 +245,8 @@ public:
 	================================================================*/
 	bool removeAll()
 	{
-		Node* current = NULL;
-		Node* trail = NULL;
+		Node<T>* current = NULL;
+		Node<T>* trail = NULL;
 
 		current = head;
 
@@ -267,7 +268,7 @@ public:
 	}
 
 private:
-	Node * head;	// variable declaration for Node to track list
+	Node<T>* head;	// variable declaration for Node to track list
 	int userData;	// variable for the user's input in main
 };
 

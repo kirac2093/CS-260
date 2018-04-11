@@ -12,12 +12,24 @@ Desc: Student class
 class Student {
 public:
 	//constructor
-	Student(const std::string name = "anonymous", char letterGrade = 'W');
+	Student(const std::string name = "anonymous", char letterGrade = 'W')
+	{
+		this->name = name;
+		this->letterGrade = letterGrade;
+	}
 
 	//operator overloads
 	friend bool operator== (const Student& stu1, const Student& stu2)
 	{
 		if (stu1.name == stu2.name && stu1.letterGrade == stu2.letterGrade)
+			return true;
+		else
+			return false;
+	}
+
+	friend bool operator!=  (const Student& stu1, const Student& stu2)
+	{
+		if (stu1.name != stu2.name && stu1.letterGrade != stu2.letterGrade)
 			return true;
 		else
 			return false;

@@ -39,48 +39,48 @@ int main()
 	cout << endl << endl;
 
 	// test on list of chars --------------------------------
-	//UnOrderedList<char>* charList = new UnOrderedList<char>;
-	//charList->append('k');
-	//charList->append('s');
-	//charList->prepend('r');
-	//charList->prepend('o');
-	//charList->prepend('w');
+	UnOrderedList<char>* charList = new UnOrderedList<char>;
+	charList->append('k');
+	charList->append('s');
+	charList->prepend('r');
+	charList->prepend('o');
+	charList->prepend('w');
 
-	//charList->remove('r');
-	//charList->remove('w');
-	//charList->remove('s');
-	//charList->print();
+	charList->remove('r');
+	charList->remove('w');
+	charList->remove('s');
+	charList->print();
 
-	//charList->removeAll();
-	//charList->print();
-	//delete charList;
+	charList->removeAll();
+	charList->print();
+	delete charList;
 
-	//// test it on Students ------------------------------------
-	//Student student1("Jen", 'A');
-	//Student student2("Jack", 'B');
-	//Student student3("Jane", 'C');
-	//Student student4("Jelly", 'F');
-	//Student student5("Jackson", 'D');
+	// test it on Students ------------------------------------
+	Student student1("Jen", 'A');
+	Student student2("Jack", 'B');
+	Student student3("Jane", 'C');
+	Student student4("Jelly", 'F');
+	Student student5("Jackson", 'D');
 
-	//UnOrderedList<Student> studentList;
+	UnOrderedList<Student> studentList;
 
-	//studentList.append(student1);
-	//studentList.append(student1);
-	//studentList.append(student1);
-	//studentList.print();
+	studentList.append(student1);
+	studentList.append(student1);
+	studentList.append(student1);
+	studentList.print();
 
-	//studentList.remove(student3);
-	//studentList.print();
+	studentList.remove(student3);
+	studentList.print();
 
-	//studentList.prepend(student3);
-	//studentList.prepend(student4);
-	//studentList.prepend(student5);
-	//studentList.find(student1);
-	//studentList.print();
+	studentList.prepend(student3);
+	studentList.prepend(student4);
+	studentList.prepend(student5);
+	studentList.find(student1);
+	studentList.print();
 
-	//studentList.removeAll();
+	studentList.removeAll();
 
-	//studentList.print();
+	studentList.print();
 
 	cin.get();
 	cin.ignore();

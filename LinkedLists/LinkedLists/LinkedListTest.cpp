@@ -65,8 +65,8 @@ int main()
 	UnOrderedList<Student> studentList;
 
 	studentList.append(student1);
-	studentList.append(student1);
-	studentList.append(student1);
+	studentList.append(student2);
+	studentList.append(student3);
 	studentList.print();
 
 	studentList.remove(student3);

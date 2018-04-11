@@ -48,10 +48,10 @@ public:
 	================================================================*/
 	bool prepend(T userData)
 	{
-		Node<T>* newNode = new Node;
+		Node<T>* newNode = new Node<T>;
 		Node<T>* currentNode = NULL;
 
-		newNode = new Node; // create a new node for this value
+		newNode = new Node<T>; // create a new node for this value
 		newNode->data = userData; // store user's value in new node
 		newNode->nextNode = NULL; // point to end of list (nothing)
 
@@ -81,7 +81,7 @@ public:
 		Node<T>* currentNode = NULL;
 
 		// create new node and store user's data in node
-		Node<T>* newNode = new Node;
+		Node<T>* newNode = new Node<T>;
 		newNode->data = userData;
 		newNode->nextNode = NULL;
 

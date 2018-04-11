@@ -1,15 +1,2 @@
 ﻿  LinkedListTest.cpp
-c:\users\t_corbk\documents\github\cs-260\linkedlists\linkedlists\unorderedlist.h(84): error C2955: 'Node': use of class template requires template argument list
-  c:\users\t_corbk\documents\github\cs-260\linkedlists\linkedlists\unorderedlist.h(15): note: see declaration of 'Node'
-  c:\users\t_corbk\documents\github\cs-260\linkedlists\linkedlists\unorderedlist.h(80): note: while compiling class template member function 'bool UnOrderedList<Student>::append(T)'
-          with
-          [
-              T=Student
-          ]
-  c:\users\t_corbk\documents\github\cs-260\linkedlists\linkedlists\linkedlisttest.cpp(67): note: see reference to function template instantiation 'bool UnOrderedList<Student>::append(T)' being compiled
-          with
-          [
-              T=Student
-          ]
-  c:\users\t_corbk\documents\github\cs-260\linkedlists\linkedlists\linkedlisttest.cpp(65): note: see reference to class template instantiation 'UnOrderedList<Student>' being compiled
-c:\users\t_corbk\documents\github\cs-260\linkedlists\linkedlists\unorderedlist.h(84): error C2512: 'Node': no appropriate default constructor available
+  LinkedLists.vcxproj -> C:\Users\t_corbk\Documents\GitHub\CS-260\LinkedLists\Debug\LinkedLists.exe

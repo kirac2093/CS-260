@@ -10,7 +10,7 @@ Desc: Tests LinkedLists in C++
 
 using namespace std;
 
-int main() 
+int main()
 {
 
 	// test template with ints --------------------------------
@@ -55,6 +55,8 @@ int main()
 	charList->print();
 	delete charList;
 
+	cout << endl;
+
 	// test it on Students ------------------------------------
 	Student student1("Jen", 'A');
 	Student student2("Jack", 'B');
@@ -75,8 +77,8 @@ int main()
 	studentList.prepend(student3);
 	studentList.prepend(student4);
 	studentList.prepend(student5);
-	studentList.find(student1);
 	studentList.print();
+	cout << endl << "Student 1 is at this position: " << studentList.find(student1) << endl;
 
 	studentList.removeAll();
 
@@ -87,4 +89,3 @@ int main()
 
 	return 1;
 }
-

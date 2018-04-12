@@ -1,4 +1,4 @@
-/************************************************
+ï»¿/************************************************
 Name: UnOrderedList.h
 Code: Kira Corbett
 Date: 4/7/18
@@ -42,7 +42,7 @@ public:
 	/*================================================================
 	Function Name:	prepend
 	Description:	inserts the given int at the beginning of
-					the unordered list.
+	the unordered list.
 	Parameters:		userData (int)
 	Return:			none
 	================================================================*/
@@ -57,11 +57,18 @@ public:
 
 		if (head != NULL)
 		{
-			// the new node becomes the head
-			currentNode = head;
-			head = newNode;
-			newNode->nextNode = currentNode;
-			return true;
+			if (find(userData) != 0)
+			{
+				return false;
+			}
+			else
+			{
+				// the new node becomes the head
+				currentNode = head;
+				head = newNode;
+				newNode->nextNode = currentNode;
+				return true;
+			}
 		}
 		else // empty list
 		{
@@ -87,16 +94,23 @@ public:
 
 		if (head != NULL)
 		{
-			currentNode = head;
-
-			// find the end of the list
-			while (currentNode->nextNode != NULL)
+			if (find(userData) != 0)
 			{
-				currentNode = currentNode->nextNode;
+				return false;
 			}
+			else
+			{
+				currentNode = head;
 
-			currentNode->nextNode = newNode;
-			return true;
+				// find the end of the list
+				while (currentNode->nextNode != NULL)
+				{
+					currentNode = currentNode->nextNode;
+				}
+
+				currentNode->nextNode = newNode;
+				return true;
+			}
 		}
 		else // list if empty
 		{
@@ -185,7 +199,7 @@ public:
 	/*================================================================
 	Function Name:	count
 	Description:	returns a count of the number of items in the list
-					(determined by traversing each node.)
+	(determined by traversing each node.)
 	Parameters:		none
 	Return:			int
 	================================================================*/
@@ -205,9 +219,9 @@ public:
 
 	/*================================================================
 	Function Name:	find
-	Description:	returns the given int’s position in the list(e.g.
-					1 if first, 2 if 2nd, etc..). Returns 0 if int is
-					not in the list
+	Description:	returns the given intï¿½s position in the list(e.g.
+	1 if first, 2 if 2nd, etc..). Returns 0 if int is
+	not in the list
 	Parameters:		data (int)
 	Return:			int (either given int's position or 0.)
 	================================================================*/
@@ -231,7 +245,7 @@ public:
 		}
 
 		// if there is an item match, return the item's position
-		if (current->nextNode != NULL && current->data == data)
+		if (current->data == data)
 			return intPosition;
 		else
 			return 0;
@@ -271,16 +285,3 @@ private:
 	Node<T>* head;	// variable declaration for Node to track list
 	int userData;	// variable for the user's input in main
 };
-
-
-/*
-The class should implement the following methods(public functions) :
-•	constructor and destructor(destructor should delete all nodes by calling removeAll)
-•	prepend - inserts the given int at the beginning of the list
-•	append - inserts the given int at the end of the list
-•	remove - removes the given int from the list.Returns true if successful, false otherwise.
-•	print - prints “The list contains the following X elements”(with X replaced the # of elements), then prints the list(comma delimited on one line) on the following line.
-•	count - returns a count of the number of items in the list(determined by traversing each node)
-•	find - returns the given int’s position in the list(e.g. 1 if first, 2 if 2nd, etc..).Returns 0 if the int is not in the list.
-•	removeAll - removes all ints from the list
-*/

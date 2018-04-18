@@ -1,0 +1,5 @@
+﻿  StringList.cpp
+c:\users\t_corbk\documents\github\cs-260\doublylinkedlists\doublylinkedlists\stringlist.cpp(354): warning C4018: '<': signed/unsigned mismatch
+  StringListTest.cpp
+  Generating Code...
+  DoublyLinkedLists.vcxproj -> C:\Users\t_corbk\Documents\GitHub\CS-260\DoublyLinkedLists\Debug\DoublyLinkedLists.exe

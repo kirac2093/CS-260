@@ -1,0 +1,6 @@
+﻿  Stacks.cpp
+c:\users\t_corbk\documents\github\cs-260\stacks\stacks\stacks.cpp(68): warning C4018: '<': signed/unsigned mismatch
+c:\users\t_corbk\documents\github\cs-260\stacks\stacks\stacks.cpp(99): warning C4018: '<': signed/unsigned mismatch
+c:\users\t_corbk\documents\github\cs-260\stacks\stacks\stacks.cpp(130): warning C4018: '<': signed/unsigned mismatch
+c:\users\t_corbk\documents\github\cs-260\stacks\stacks\stacks.cpp(209): warning C4018: '<': signed/unsigned mismatch
+  Stacks.vcxproj -> C:\Users\t_corbk\Documents\GitHub\CS-260\Stacks\Debug\Stacks.exe

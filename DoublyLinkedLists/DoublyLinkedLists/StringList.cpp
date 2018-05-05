@@ -117,6 +117,8 @@ bool StringList::insert(const std::string userData)
 /*================================================================
 Name: remove
 Desc: removes all occurrences of the given string from the list.
+Note: ERROR! Does not remove ALL occurrences of given string. 
+	  Need to revise.
 Args: nodeToDelete (string) const
 Retn: returns the number of items removed (int).
 ================================================================*/

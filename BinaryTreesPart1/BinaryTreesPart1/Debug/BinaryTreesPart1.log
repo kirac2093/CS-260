@@ -1,3 +1,2 @@
-﻿  BinarySearchTrees.cpp
-c:\users\t_corbk\documents\visual studio 2017\projects\binarytreespart1\binarytreespart1\binarysearchtrees.cpp(75): warning C4715: 'BinarySearchTrees::insert': not all control paths return a value
-  BinaryTreesPart1.vcxproj -> C:\Users\t_corbk\Documents\Visual Studio 2017\Projects\BinaryTreesPart1\Debug\BinaryTreesPart1.exe
+﻿  Source.cpp
+  BinaryTreesPart1.vcxproj -> C:\Users\t_corbk\Documents\GitHub\CS-260\BinaryTreesPart1\Debug\BinaryTreesPart1.exe

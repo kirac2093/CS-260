@@ -7,6 +7,9 @@ Desc: class implementation for binary search trees.
 #include <iostream>
 #include "BinarySearchTrees.h"
 
+// function prototypes
+void print(string theString);
+
 BinarySearchTrees::BinarySearchTrees()
 {
 	root = NULL;
@@ -82,7 +85,7 @@ Retn: none
 ================================================================*/
 void BinarySearchTrees::printInOrder()
 {
-	printInOrderR(root);
+	printInOrderR(root, print);
 }
 
 /*================================================================
@@ -93,7 +96,7 @@ Retn: none
 ================================================================*/
 void BinarySearchTrees::printPreOrder()
 {
-	printPreOrderR(root);
+	printPreOrderR(root, print);
 }
 
 /*================================================================
@@ -104,7 +107,7 @@ Retn: none
 ================================================================*/
 void BinarySearchTrees::printPostOrder()
 {
-	printPostOrderR(root);
+	printPostOrderR(root, print);
 }
 
 /*================================================================
@@ -114,13 +117,13 @@ Args: current (treeNode pointer)
 Retn: none
 Note: adapted from C++ Programming by D.S. Malik
 ================================================================*/
-void BinarySearchTrees::printInOrderR(treeNode* current)
+void BinarySearchTrees::printInOrderR(treeNode* current, const function<void(string)> &funcToCall)
 {
 	if (current != NULL)
 	{
-		printInOrderR(current->left);
-		cout << current->data << " ";
-		printInOrderR(current->right);
+		printInOrderR(current->left, funcToCall);
+		funcToCall(current->data);
+		printInOrderR(current->right, funcToCall);
 	}
 }
 
@@ -131,13 +134,13 @@ Args: current (treeNode pointer)
 Retn: none
 Note: adapted from C++ Programming by D.S. Malik
 ================================================================*/
-void BinarySearchTrees::printPreOrderR(treeNode* current)
+void BinarySearchTrees::printPreOrderR(treeNode* current, const function<void(string)> &funcToCall)
 {
 	if (current != NULL)
 	{
-		cout << current->data << " ";
-		printPreOrderR(current->left);
-		printPreOrderR(current->right);
+		funcToCall(current->data);
+		printPreOrderR(current->left, funcToCall);
+		printPreOrderR(current->right, funcToCall);
 	}
 }
 
@@ -148,12 +151,23 @@ Args: current (treeNode pointer)
 Retn: none
 Note: adapted from C++ Programming by D.S. Malik
 ================================================================*/
-void BinarySearchTrees::printPostOrderR(treeNode* current)
+void BinarySearchTrees::printPostOrderR(treeNode* current, const function<void(string)> &funcToCall)
 {
 	if (current != NULL)
 	{
-		printPostOrderR(current->left);
-		printPostOrderR(current->right);
-		cout << current->data << " ";
+		printPostOrderR(current->left, funcToCall);
+		printPostOrderR(current->right, funcToCall);
+		funcToCall(current->data);
 	}
+}
+
+/*================================================================
+Name: print
+Desc: prints given string
+Args: theString (string)
+Retn: none
+================================================================*/
+void print(string theString)
+{
+	cout << theString << " ";
 }

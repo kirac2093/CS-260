@@ -8,6 +8,7 @@ Desc: class definitions binary search trees.
 #pragma once
 
 #include <string>
+#include <functional>
 
 using namespace std;
 
@@ -58,11 +59,11 @@ private:
 
 	treeNode* root;
 
-	void printInOrderR(treeNode* current);
+	void printInOrderR(treeNode* current, const function<void(string)> &funcToCall);
 
-	void printPreOrderR(treeNode* current);
+	void printPreOrderR(treeNode* current, const function<void(string)> &funcToCall);
 
-	void printPostOrderR(treeNode* current);
+	void printPostOrderR(treeNode* current, const function<void(string)> &funcToCall);
 
 	//template <class varType>
 	//struct nodeType

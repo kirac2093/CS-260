@@ -1,0 +1,3 @@
+﻿  Source.cpp
+c:\users\t_corbk\documents\github\cs-260\binarysearchtreespart2\binarysearchtreespart2\tree.h(493): warning C4715: 'Tree<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::search': not all control paths return a value
+  BinarySearchTreesPart2.vcxproj -> C:\Users\t_corbk\Documents\GitHub\CS-260\BinarySearchTreesPart2\Debug\BinarySearchTreesPart2.exe

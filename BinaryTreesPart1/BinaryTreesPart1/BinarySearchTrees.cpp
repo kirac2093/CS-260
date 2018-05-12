@@ -75,6 +75,29 @@ bool BinarySearchTrees::insert(string data)
 		}
 		return true;
 	}
+
+	// TODO: implement ALL routines recursive for BST
+	//=========================Recursive traversal of Binary Search Tree======================
+	//if (current == NULL)
+	//{
+	//	current = new treeNode;
+	//	current->data = data;
+	//	current->left = NULL;
+	//	current->right = NULL;
+	//	return true;
+	//}
+	//else // general case
+	//{
+	//	if (data < current->data)
+	//	{
+	//		return insert(current->left, data);
+	//	}
+	//	else
+	//	{
+	//		return insert(current->right, data);
+	//	}
+	//}
+	//==========================================================================================
 }
 
 /*================================================================

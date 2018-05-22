@@ -87,9 +87,9 @@ private:
 	// recursive calls for traversal routines (private because they handle tree nodes)
 	void traverseInOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall, int height);
 
-	void traversePreOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall);
+	void traversePreOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall, int height);
 
-	void traversePostOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall);
+	void traversePostOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall, int height);
 
 	void deepCopy(nodeType<T>* &copiedTreeRoot, nodeType<T>* ourTreeRoot);
 	/*========================================================
@@ -193,7 +193,7 @@ Retn: none, funcToCall (none)
 template <class T>
 void Tree<T>::traversePreOrder(const function<void(string, int)> &funcToCall)
 {
-	traversePreOrderR(root, print);
+	traversePreOrderR(root, print, 0);
 }
 
 /*================================================================
@@ -205,7 +205,7 @@ Retn: none, funcToCall (none)
 template <class T>
 void Tree<T>::traversePostOrder(const function<void(string, int)> &funcToCall)
 {
-	traversePostOrderR(root, print);
+	traversePostOrderR(root, print, 0);
 }
 
 /*====================================================================
@@ -221,9 +221,9 @@ void Tree<T>::traverseInOrderR(nodeType<T>* current, const function<void(string,
 	if (current != NULL)
 	{
 		// increment height if item entered to the left or right of tree
-		traverseInOrderR(current->left, funcToCall, ++height);
-		funcToCall(current->data, --height);
-		traverseInOrderR(current->right, funcToCall, ++height);
+		traverseInOrderR(current->left, funcToCall, height + 1);
+		funcToCall(current->data, height);
+		traverseInOrderR(current->right, funcToCall, height + 1);
 	}
 }
 
@@ -235,16 +235,13 @@ Retn: none
 Note: adapted from C++ Programming by D.S. Malik
 ================================================================*/
 template <class T>
-void Tree<T>::traversePreOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall)
+void Tree<T>::traversePreOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall, int height)
 {
-	int height = 0;
-
 	if (current != NULL)
 	{
-		height = nodeHeight(current);
 		funcToCall(current->data, height);
-		traversePreOrderR(current->left, funcToCall);
-		traversePreOrderR(current->right, funcToCall);
+		traversePreOrderR(current->left, funcToCall, height + 1);
+		traversePreOrderR(current->right, funcToCall, height + 1);
 	}
 }
 
@@ -256,15 +253,12 @@ Retn: none
 Note: adapted from C++ Programming by D.S. Malik
 ================================================================*/
 template <class T>
-void Tree<T>::traversePostOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall)
+void Tree<T>::traversePostOrderR(nodeType<T>* current, const function<void(string, int)> &funcToCall, int height)
 {
-	int height = 0;
-
 	if (current != NULL)
 	{
-		height = nodeHeight(current);
-		traversePostOrderR(current->left, funcToCall);
-		traversePostOrderR(current->right, funcToCall);
+		traversePostOrderR(current->left, funcToCall, height + 1);
+		traversePostOrderR(current->right, funcToCall, height + 1);
 		funcToCall(current->data, height);
 	}
 }
@@ -385,7 +379,15 @@ void Tree<T>::deleteNode(const T& itemToDelete)
 			else
 			{
 				trailCurrent = currentNode;
-				currentNode = search(currentNode, itemToDelete);
+				search(currentNode, itemToDelete);
+				if (currentNode->data > itemToDelete)
+				{
+					currentNode = currentNode->left;
+				}
+				else
+				{
+					currentNode = currentNode->right;
+				}
 			}
 		}
 	}
@@ -481,7 +483,7 @@ nodeType<T>* Tree<T>::search(nodeType<T>* currentNode, const T& itemToDelete)
 			return currentNode;
 			found = true;
 		}
-		else if (currentNode->data > itemToDelete)
+		if (currentNode->data > itemToDelete)
 		{
 			search(currentNode->left, itemToDelete);
 		}
@@ -523,18 +525,18 @@ void Tree<T>::deleteFromTree(nodeType<T>* &nodePointer)
 		nodePointer = NULL;
 		delete nodeToDelete;
 	}
-	// case 2: nodeToDelete has only a left child
-	else if (nodePointer->right == NULL)
-	{
-		nodeToDelete = nodePointer;
-		nodePointer = nodeToDelete->left;
-		delete nodeToDelete;
-	}
-	// case 3: nodeToDelete has only a right child
+	// case 2: nodeToDelete has only a right child
 	else if (nodePointer->left == NULL)
 	{
 		nodeToDelete = nodePointer;
 		nodePointer = nodeToDelete->right;
+		delete nodeToDelete;
+	}
+	// case 3: nodeToDelete has only a left child
+	else if (nodePointer->right == NULL)
+	{
+		nodeToDelete = nodePointer;
+		nodePointer = nodeToDelete->left;
 		delete nodeToDelete;
 	}
 	// case 4: nodeToDelete has a left and right child

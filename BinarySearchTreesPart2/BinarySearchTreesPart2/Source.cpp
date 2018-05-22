@@ -16,11 +16,6 @@ void print(string theString, int height);
 
 int main()
 {
-	/*
-			Print the copy of the tree you made in step 4 using inOrder, then postOrder, and lastly preOrder processing, with each using the same print function(passed by a function pointer) (see technical details below)
-			Remove all nodes in the copy(using a removeAll function).
-			Reprint the copy(should print nothing)*/
-
 	// 1. create a binary search trees of strings
 	Tree<string> tree1;
 	Tree<string> tree2;

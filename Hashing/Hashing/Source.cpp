@@ -17,21 +17,16 @@ using namespace std;
 
 // constants
 const int MAX_WORDS = 45401;
-static const size_t InitialFNV = 2166136261U;
-static const size_t FNVMultiple = 16777619;
 
 
 // function prototypes
 string toLower(string upperCase);
-size_t myhash(const string &s);
 int hashFunc(string myString, int myArray[]);
 float numOfCollisions(int hashMap[]);
 void mapResults(int hashMap[]);
 
 int main()
 {
-	//map<string, int>hashMap[45401] = {};
-
 	int hashMap[MAX_WORDS] = {};
 	int i = 0;
 	char wordFromLine = {};
@@ -81,17 +76,6 @@ string toLower(string enteredString)
 	return enteredString;
 }
 
-size_t myhash(const string &s)
-{
-	size_t hash = InitialFNV;
-	for (size_t i = 0; i < s.length(); i++)
-	{
-		hash = hash ^ (s[i]);       /* xor  the low 8 bits */
-		hash = hash * FNVMultiple;  /* multiply by the magic number */
-	}
-	return hash;
-}
-
 /*===========================================================================
 Name: hashFun
 Desc: creates a hash from each word in words.txt
@@ -103,17 +87,22 @@ int hashFunc(string word, int myArray[])
 	int hash = 1;
 	char ch;
 	double rHash = 1;
-	double iHash = 1;
 	double bigPrime = 131071;
 
 	for (int i = 0; i < word.length(); i++)
 	{
 		ch = word[i];
 		if (myArray[i] != NULL)
+		{
+			rHash *= ch * (i + 1001);
+		}
+		else
+		{
 			rHash *= ch * (i + 1000);
-		rHash *= ch * (i + 1);
+		}
 	}
 
+	// randomize integer placement with large numbers
 	rHash = fmod(rHash, bigPrime);
 	hash = rHash;
 
@@ -164,6 +153,7 @@ void mapResults(int hash[])
 		//if (hash[i] != 0)
 		{
 			outfile << hash[i] << '\n';
+			//outfile << hash[i] << ',';
 		}
 	}
 

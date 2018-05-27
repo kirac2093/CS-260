@@ -1,5 +1,5 @@
 ﻿  Source.cpp
-c:\users\t_corbk\documents\github\cs-260\hashing\hashing\source.cpp(76): warning C4018: '<': signed/unsigned mismatch
-c:\users\t_corbk\documents\github\cs-260\hashing\hashing\source.cpp(109): warning C4018: '<': signed/unsigned mismatch
-c:\users\t_corbk\documents\github\cs-260\hashing\hashing\source.cpp(118): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\t_corbk\documents\github\cs-260\hashing\hashing\source.cpp(71): warning C4018: '<': signed/unsigned mismatch
+c:\users\t_corbk\documents\github\cs-260\hashing\hashing\source.cpp(92): warning C4018: '<': signed/unsigned mismatch
+c:\users\t_corbk\documents\github\cs-260\hashing\hashing\source.cpp(107): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Hashing.vcxproj -> C:\Users\t_corbk\Documents\GitHub\CS-260\Hashing\Debug\Hashing.exe

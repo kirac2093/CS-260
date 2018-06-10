@@ -119,7 +119,6 @@
     <ClCompile Include="SortingTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DataSet.h" />
     <ClInclude Include="Sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -41,35 +41,75 @@ Sort::~Sort()
 
 }
 
+/********************************************************
+Func: consoleOutput
+Desc: console interface
+Args: none
+Retn: none
+*******************************************************/
 void Sort::consoleOutput()
 {
-	std::cout << "Selection Sort, 100, 1000, 10000" << std::endl;
-
+	std::cout << "*************************** Selection Sorting ***************************" << std::endl;
+	std::cout << "Dataset 100: Selection Sorting..." << std::endl;
 	timedSelectionSort(dataSet100->inOrder, dataSet100->reverseOrder, dataSet100->randomOrder, ARRAY100_SIZE);
+	std::cout << "Dataset 1000: Selection Sorting..." << std::endl;
 	timedSelectionSort(dataSet1000->inOrder, dataSet1000->reverseOrder, dataSet1000->randomOrder, ARRAY1000_SIZE);
+	std::cout << "Dataset 10000: Selection Sorting..." << std::endl;
 	timedSelectionSort(dataSet10000->inOrder, dataSet10000->reverseOrder, dataSet10000->randomOrder, ARRAY10000_SIZE);
+	std::cout << "Dataset 100000: Selection Sorting..." << std::endl;
 	timedSelectionSort(dataSet100000->inOrder, dataSet100000->reverseOrder, dataSet100000->randomOrder, ARRAY100000_SIZE);
 
-	std::cout << dataSet100->orderSelectionSortTime << ", " << dataSet1000->orderSelectionSortTime << ", "
-		<< dataSet10000->orderSelectionSortTime << ", " << dataSet100000->orderSelectionSortTime << std::endl << std::endl;
+	std::cout << "Selection sorting completed." << std::endl << std::endl;
 
+	std::cout << "Selection Sort, 100, 1000, 10000" << std::endl;
+	std::cout << "In order, " << dataSet100->orderSelectionSortTime << ", " << dataSet1000->orderSelectionSortTime << ", "
+			  << dataSet10000->orderSelectionSortTime << ", " << dataSet100000->orderSelectionSortTime << std::endl;
+	std::cout << "Reverse order, " << dataSet100->reverseSelectionSortTime << ", " << dataSet1000->reverseSelectionSortTime << ", "
+			  << dataSet10000->reverseSelectionSortTime << ", " << dataSet100000->reverseSelectionSortTime << std::endl;
+	std::cout << "Random order, " << dataSet100->randomSelectionSortTime << ", " << dataSet1000->randomSelectionSortTime << ", "
+			  << dataSet10000->randomSelectionSortTime << ", " << dataSet100000->randomSelectionSortTime << std::endl << std::endl;
+
+	std::cout << "*************************** Insertion Sorting ***************************" << std::endl;
+	std::cout << "Dataset 100: Insertion Sorting..." << std::endl;
 	timedInsertionSort(dataSet100->inOrder, dataSet100->reverseOrder, dataSet100->randomOrder, ARRAY100_SIZE);
+	std::cout << "Dataset 1000: Insertion Sorting..." << std::endl;
 	timedInsertionSort(dataSet1000->inOrder, dataSet1000->reverseOrder, dataSet1000->randomOrder, ARRAY1000_SIZE);
+	std::cout << "Dataset 10000: Insertion Sorting..." << std::endl;
 	timedInsertionSort(dataSet10000->inOrder, dataSet10000->reverseOrder, dataSet10000->randomOrder, ARRAY10000_SIZE);
+	std::cout << "Dataset 100000: Insertion Sorting..." << std::endl;
 	timedInsertionSort(dataSet100000->inOrder, dataSet100000->reverseOrder, dataSet100000->randomOrder, ARRAY100000_SIZE);
 
-	std::cout << dataSet100->orderInsertionSortTime << ", " << dataSet1000->orderInsertionSortTime << ", "
-		<< dataSet10000->orderInsertionSortTime << ", " << dataSet100000->orderInsertionSortTime << std::endl << std::endl;
+	std::cout << "Insertion sorting completed." << std::endl << std::endl;
 
+	std::cout << "Insertion Sort, 100, 1000, 10000" << std::endl;
+	std::cout << "In order, " << dataSet100->orderInsertionSortTime << ", " << dataSet1000->orderInsertionSortTime << ", "
+			  << dataSet10000->orderInsertionSortTime << ", " << dataSet100000->orderInsertionSortTime << std::endl;
+	std::cout << "Reverse order, " << dataSet100->reverseInsertionSortTime << ", " << dataSet1000->reverseInsertionSortTime << ", "
+			  << dataSet10000->reverseInsertionSortTime << ", " << dataSet100000->reverseInsertionSortTime << std::endl;
+	std::cout << "Random order, " << dataSet100->randomInsertionSortTime << ", " << dataSet1000->randomInsertionSortTime << ", "
+			  << dataSet10000->randomInsertionSortTime << ", " << dataSet100000->randomInsertionSortTime << std::endl << std::endl;
+
+	std::cout << "*************************** Quick Sorting ***************************" << std::endl;
+	std::cout << "Dataset 100: Quick Sorting..." << std::endl;
 	timedQuickSort(dataSet100->inOrder, dataSet100->reverseOrder, dataSet100->randomOrder, ARRAY100_SIZE);
+	std::cout << "Dataset 1000: Quick Sorting..." << std::endl;
 	timedQuickSort(dataSet1000->inOrder, dataSet1000->reverseOrder, dataSet1000->randomOrder, ARRAY1000_SIZE);
+	std::cout << "Dataset 10000: Quick Sorting..." << std::endl;
 	timedQuickSort(dataSet10000->inOrder, dataSet10000->reverseOrder, dataSet10000->randomOrder, ARRAY10000_SIZE);
+	std::cout << "Dataset 100000: Quick Sorting..." << std::endl;
 	timedQuickSort(dataSet100000->inOrder, dataSet100000->reverseOrder, dataSet100000->randomOrder, ARRAY100000_SIZE);
 
-	std::cout << dataSet100->orderQuickSortTime << ", " << dataSet1000->orderQuickSortTime << ", "
-		<< dataSet10000->orderQuickSortTime << ", " << dataSet100000->orderQuickSortTime << std::endl << std::endl;
+	std::cout << "Quick sorting completed." << std::endl << std::endl;
 
-	std::cout << "Outputting results..." << std::endl;
+	std::cout << "Quick Sort, 100, 1000, 10000" << std::endl;
+	std::cout << "In order, " << dataSet100->orderQuickSortTime << ", " << dataSet1000->orderQuickSortTime << ", "
+			  << dataSet10000->orderQuickSortTime << ", " << dataSet100000->orderQuickSortTime << std::endl;
+	std::cout << "Reverse order, " << dataSet100->reverseQuickSortTime << ", " << dataSet1000->reverseQuickSortTime << ", "
+			  << dataSet10000->reverseQuickSortTime << ", " << dataSet100000->reverseQuickSortTime << std::endl;
+	std::cout << "Random order, " << dataSet100->randomQuickSortTime << ", " << dataSet1000->randomQuickSortTime << ", "
+			  << dataSet10000->randomQuickSortTime << ", " << dataSet100000->randomQuickSortTime << std::endl << std::endl;
+
+	std::cout << "Outputting results to file..." << std::endl;
 	outputResults();
 
 	std::cout << "Sorting completed." << std::endl;
@@ -88,22 +128,16 @@ void Sort::timedSelectionSort(int inOrder[], int reverseOrder[], int randomOrder
 
 	clock_t time;
 
-	// in order
-	std::cout << "In order..." << std::endl;
 	time = clock();
 	selectionSort(inOrder, size);
 	/*time = clock() - (time);
 	time = (float)time / CLOCKS_PER_SEC;*/
 	timeInOrder = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
 
-	// reverse order
-	std::cout << "Reverse order..." << std::endl;
 	time = clock();
 	selectionSort(reverseOrder, size);
 	timeReverse = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
 
-	// random order
-	std::cout << "Random order..." << std::endl << std::endl;
 	time = clock();
 	selectionSort(randomOrder, size);
 	timeRandom = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
@@ -157,20 +191,17 @@ void Sort::timedInsertionSort(int order[], int reverse[], int random[], int size
 
 	clock_t time;
 
-	// in order
-	std::cout << "In order..." << std::endl;
+	//std::cout << "In order..." << std::endl;
 	time = clock();
 	insertionSort(order, size);
 	timeInOrder = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
 
-	// reverse order
-	std::cout << "Reverse order..." << std::endl;
+	//std::cout << "Reverse order..." << std::endl;
 	time = clock();
 	insertionSort(reverse, size);
 	timeReverse = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
 
-	// random order
-	std::cout << "Random order..." << std::endl << std::endl;
+	//std::cout << "Random order..." << std::endl << std::endl;
 	time = clock();
 	insertionSort(random, size);
 	timeRandom = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
@@ -224,21 +255,17 @@ void Sort::timedQuickSort(int order[], int reverse[], int random[], int size)
 
 	clock_t time;
 
-	// in order
-	std::cout << "In order..." << std::endl;
+	//std::cout << "In order..." << std::endl;
 	time = clock();
 	quickSortR(order, 0, size - 1);
 	timeInOrder = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
 
-	// reverse order
-	std::cout << "Reverse order..." << std::endl;
-	//time = 0;
+	//std::cout << "Reverse order..." << std::endl;
 	time = clock();
 	quickSortR(reverse, 0, size - 1);
 	timeReverse = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
 
-	// random order
-	std::cout << "Random order..." << std::endl << std::endl;
+	//std::cout << "Random order..." << std::endl << std::endl;
 	time = clock();
 	quickSortR(random, 0, size - 1);
 	timeRandom = static_cast<float>(clock() - time) / CLOCKS_PER_SEC;
@@ -453,16 +480,28 @@ void Sort::outputResults()
 	}
 
 	outfile << "Selection Sort, 100, 1000, 10000, 100000" << std::endl;
-	outfile << ", " << dataSet100->orderSelectionSortTime << ", " << dataSet1000->orderSelectionSortTime << ", "
-			<< dataSet10000->orderSelectionSortTime << ", " << dataSet100000->orderSelectionSortTime << std::endl << std::endl;
+	outfile << "In order, " << dataSet100->orderSelectionSortTime << ", " << dataSet1000->orderSelectionSortTime << ", "
+		<< dataSet10000->orderSelectionSortTime << ", " << dataSet100000->orderSelectionSortTime << std::endl;
+	outfile << "Reverse order, " << dataSet100->reverseSelectionSortTime << ", " << dataSet1000->reverseSelectionSortTime << ", "
+		<< dataSet10000->reverseSelectionSortTime << ", " << dataSet100000->reverseSelectionSortTime << std::endl;
+	outfile << "Random order, " << dataSet100->randomSelectionSortTime << ", " << dataSet1000->randomSelectionSortTime << ", "
+		<< dataSet10000->randomSelectionSortTime << ", " << dataSet100000->randomSelectionSortTime << std::endl << std::endl;
 
 	outfile << "Insertion Sort, 100, 1000, 10000, 100000" << std::endl;
-	outfile << ", " << dataSet100->orderInsertionSortTime << ", " << dataSet1000->orderInsertionSortTime << ", "
-		<< dataSet10000->orderInsertionSortTime << ", " << dataSet100000->orderInsertionSortTime << std::endl << std::endl;
+	outfile << "In order, " << dataSet100->orderInsertionSortTime << ", " << dataSet1000->orderInsertionSortTime << ", "
+		<< dataSet10000->orderInsertionSortTime << ", " << dataSet100000->orderInsertionSortTime << std::endl;
+	outfile << "Reverse order, " << dataSet100->reverseInsertionSortTime << ", " << dataSet1000->reverseInsertionSortTime << ", "
+		<< dataSet10000->reverseInsertionSortTime << ", " << dataSet100000->reverseInsertionSortTime << std::endl;
+	outfile << "Random order, " << dataSet100->randomInsertionSortTime << ", " << dataSet1000->randomInsertionSortTime << ", "
+		<< dataSet10000->randomInsertionSortTime << ", " << dataSet100000->randomInsertionSortTime << std::endl << std::endl;
 
 	outfile << "Quick Sort, 100, 1000, 10000, 100000" << std::endl;
-	outfile << ", " << dataSet100->orderQuickSortTime << ", " << dataSet1000->orderQuickSortTime << ", "
-		<< dataSet10000->orderQuickSortTime << ", " << dataSet100000->orderQuickSortTime << std::endl << std::endl;
+	outfile << "In order, " << dataSet100->orderQuickSortTime << ", " << dataSet1000->orderQuickSortTime << ", "
+		<< dataSet10000->orderQuickSortTime << ", " << dataSet100000->orderQuickSortTime << std::endl;
+	outfile << "Reverse order, " << dataSet100->reverseQuickSortTime << ", " << dataSet1000->reverseQuickSortTime << ", "
+		<< dataSet10000->reverseQuickSortTime << ", " << dataSet100000->reverseQuickSortTime << std::endl;
+	outfile << "Random order, " << dataSet100->randomQuickSortTime << ", " << dataSet1000->randomQuickSortTime << ", "
+		<< dataSet10000->randomQuickSortTime << ", " << dataSet100000->randomQuickSortTime << std::endl << std::endl;
 
 	outfile.close();
 
